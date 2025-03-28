@@ -1,4 +1,4 @@
-﻿namespace VGameEssentials.Systems.Extensions.Numbers.Integers
+﻿namespace VGameEssentials.Systems.Extensions.Numbers.Ints
 {
 	/// <summary>
 	/// Provides range validation extension methods.
