@@ -49,7 +49,10 @@ namespace VGameEssentials.Systems.Collections.Basic
 		}
 
 		public bool Contains(T item) => Items.Contains(item);
-
+		/// <summary>
+		/// Removes the <paramref name="item"/> from the collection.
+		/// </summary>
+		/// <param name="item">The item to remove.</param>
 		public void Remove(T item)
 		{
 			Items=Items.Remove(item)!;
