@@ -47,7 +47,11 @@ namespace VGameEssentials.Systems.Collections.Basic
 		{
 			Items = Items.AddRange(items)!;
 		}
-
+		/// <summary>
+		/// Determines if the given <paramref name="item"/> exists within this collection.
+		/// </summary>
+		/// <param name="item">The item to search for.</param>
+		/// <returns>a <see cref="bool"/> representation where <see cref="bool">true</see> results in success, otherwise the <paramref name="item"/> was not found within the collection.</returns>
 		public bool Contains(T item) => Items.Contains(item);
 		/// <summary>
 		/// Removes the <paramref name="item"/> from the collection.
