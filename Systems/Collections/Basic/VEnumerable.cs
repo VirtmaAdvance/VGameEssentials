@@ -15,7 +15,7 @@ namespace VGameEssentials.Systems.Collections.Basic
 		/// <summary>
 		/// The collection of items.
 		/// </summary>
-		public T[] Items
+		protected T[] Items
 		{
 			get => _items;
 			set
