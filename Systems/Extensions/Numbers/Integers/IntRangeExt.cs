@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Provides range validation extension methods.
 	/// </summary>
-	public static class IntIsBetweenExt
+	public static class IntRangeExt
 	{
 		/// <summary>
 		/// Determines if the <paramref name="source"/> value is equal to or between both the <paramref name="min"/> and <paramref name="max"/> values.
