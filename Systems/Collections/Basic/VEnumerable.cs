@@ -25,12 +25,22 @@ namespace VGameEssentials.Systems.Collections.Basic
 				_items = value;
 			}
 		}
-
+		/// <summary>
+		/// Gets the number of items within this collection.
+		/// </summary>
 		public int Length => Items.Length;
-
+		/// <summary>
+		/// Gets or sets the value at the given <paramref name="index"/> position within this collection.
+		/// </summary>
+		/// <param name="index">The index position to access.</param>
+		/// <returns>the <typeparamref name="T"/> located at the given <paramref name="index"/> position, otherwise <see langword="null"/>.</returns>
 		public T? this[int index]
 		{
 			get => IsIndexValid(index) ? Items[index] : default;
+			set
+			{
+
+			}
 		}
 
 
@@ -45,7 +55,6 @@ namespace VGameEssentials.Systems.Collections.Basic
 		{
 			Prv_Add(item);
 		}
-
 		private void Prv_Add(T item) => Items = Items.Add(item)!;
 		/// <summary>
 		/// Adds an array of items to this collection.
