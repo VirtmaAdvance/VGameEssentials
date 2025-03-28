@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VGameEssentials.Systems.Extensions.Numbers.Ints;
 
 namespace VGameEssentials.Systems.Extensions.Arrays
 {
@@ -13,6 +14,9 @@ namespace VGameEssentials.Systems.Extensions.Arrays
 		{
 			if (source is null)
 				source = [];
+			if(!fromIndex.IsBetween(0, source.Length))
+
+			var valueAtFromIndex = source[fromIndex];
 		}
 
 	}
