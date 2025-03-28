@@ -42,7 +42,10 @@ namespace VGameEssentials.Systems.Collections.Basic
 		}
 
 		private void Prv_Add(T item) => Items = Items.Add(item)!;
-
+		/// <summary>
+		/// Adds an array of items to this collection.
+		/// </summary>
+		/// <param name="items">The variable length of items to add to this collection.</param>
 		public void AddRange(params T[] items)
 		{
 			Items = Items.AddRange(items)!;
