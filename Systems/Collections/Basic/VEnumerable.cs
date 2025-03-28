@@ -12,7 +12,9 @@ namespace VGameEssentials.Systems.Collections.Basic
 	{
 
 		private T[] _items = [];
-
+		/// <summary>
+		/// The collection of items.
+		/// </summary>
 		public T[] Items
 		{
 			get => _items;
