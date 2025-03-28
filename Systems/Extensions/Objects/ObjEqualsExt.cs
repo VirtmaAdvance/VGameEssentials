@@ -7,7 +7,7 @@
 		/// </summary>
 		/// <param name="source">The source object to use.</param>
 		/// <param name="value">The object to compare to.</param>
-		/// <returns>a <see cref="bool"/> representation of the result.</returns>
+		/// <returns>a <see cref="bool"/> representation where <see cref="bool">true</see> results in success, otherwise <see cref="bool">false</see>.</returns>
 		public static bool IsEqualTo(this object? source, object? value)
 		{
 			if (source is null && value is null)
