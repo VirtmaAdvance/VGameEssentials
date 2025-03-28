@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace VGameEssentials.Systems.Extensions.Numbers.Integers
 {
+	/// <summary>
+	/// Provides range validation extension methods.
+	/// </summary>
 	public static class IntIsBetweenExt
 	{
 		/// <summary>
