@@ -35,7 +35,10 @@ namespace VGameEssentials.Systems.Collections.Basic
 
 
 
-
+		/// <summary>
+		/// Adds the <paramref name="item"/> to the collection.
+		/// </summary>
+		/// <param name="item">The item to add.</param>
 		public void Add(T item)
 		{
 			Prv_Add(item);
