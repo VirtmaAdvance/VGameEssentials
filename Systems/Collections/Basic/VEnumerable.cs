@@ -54,7 +54,9 @@ namespace VGameEssentials.Systems.Collections.Basic
 		{
 			Items=Items.Remove(item)!;
 		}
-
+		/// <summary>
+		/// Purges the contents within the collection.
+		/// </summary>
 		public void Clear()
 		{
 			Items = [];
