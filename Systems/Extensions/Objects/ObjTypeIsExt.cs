@@ -19,6 +19,12 @@ namespace VGameEssentials.Systems.Extensions.Objects
 		public static Type[]? GetInheritences<T>(this T? source, params Type[]? targetTypes) => source is null ? null : TypeIsExt.GetInheritences(source.GetType(), targetTypes);
 		/// <inheritdoc cref="TypeIsExt.GetInheritences(Type, string[])"/>
 		public static Type[]? GetInheritences<T>(this T? source, params string[]? targetTypes) => source is null ? null : TypeIsExt.GetInheritences(source.GetType(), targetTypes);
+		/// <summary>
+		/// Determines if the given <paramref name="source"/> is a numeric data-type.
+		/// </summary>
+		/// <param name="source">The value to analyze.</param>
+		/// <returns>a<see cref="bool"/> representation where<see cref="bool">true</see> results in success, otherwise<see cref="bool">false</see>.</returns>
+		public static bool IsNumber(this object? source) => source.IsOfAny("sbyte", "byte", "ushort", "short", "uint", "int", "ulong", "long", "float", "double");
 
 	}
 }
