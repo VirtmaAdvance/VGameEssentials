@@ -74,7 +74,11 @@ namespace VGameEssentials.Systems.Collections.Basic
 		{
 			Items = [];
 		}
-
+		/// <summary>
+		/// Determines if the given <paramref name="index"/> references an acceptable index position for this collection.
+		/// </summary>
+		/// <param name="index">The index position to validate.</param>
+		/// <returns>a <see cref="bool"/> representation where <see cref="bool">true</see> results in success, otherwise <see cref="bool">false</see>.</returns>
 		protected bool IsIndexValid(int index) => index > -1 && index < Length;
 
 
