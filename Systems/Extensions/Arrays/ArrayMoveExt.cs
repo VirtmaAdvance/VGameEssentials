@@ -14,7 +14,10 @@ namespace VGameEssentials.Systems.Extensions.Arrays
 		{
 			if (source is null)
 				source = [];
-			if(!fromIndex.IsBetween(0, source.Length))
+			if(!fromIndex.IsBetween(0, source.Length-1))
+			{
+
+			}
 
 			var valueAtFromIndex = source[fromIndex];
 		}

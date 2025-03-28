@@ -1,4 +1,6 @@
-﻿namespace VGameEssentials.Systems.Extensions.Numbers.Ints
+﻿using VGameEssentials.Systems.Extensions.Arrays;
+
+namespace VGameEssentials.Systems.Extensions.Numbers.Ints
 {
 	/// <summary>
 	/// Provides range validation extension methods.
@@ -20,6 +22,20 @@
 			if (min == max)
 				throw new ArgumentOutOfRangeException("The given minimum value cannot be equal to the given maximum value.");
 			return source >= min && source <= max;
+		}
+		/// <summary>
+		/// Determines which of the given <paramref name="values"/> the <paramref name="source"/> value is closest to by calculating the differences between each value.
+		/// </summary>
+		/// <param name="source">The number to analyze.</param>
+		/// <param name="values">The numbers to test against.</param>
+		/// <returns>the numeric value </returns>
+		public static int GetClosestValue(this int source, params int[] values)
+		{
+			KeyValuePair<int, int>[] differences = [];
+			foreach (var value in values)
+				differences = differences.Add(new((int)(Math.Max(value, source) - Math.Min(value, source)), value));
+			Array.Sort(differences);
+			return differences.FirstOrDefault().Value;
 		}
 
 	}
