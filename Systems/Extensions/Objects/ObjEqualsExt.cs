@@ -1,5 +1,8 @@
 ﻿namespace VGameEssentials.Systems.Extensions.Objects
 {
+	/// <summary>
+	/// Provides equals comparison extension methods for objects.
+	/// </summary>
 	public static class ObjEqualsExt
 	{
 		/// <summary>
