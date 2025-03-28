@@ -65,11 +65,24 @@ namespace VGameEssentials.Systems.Collections.Basic
 			Items = Items.AddRange(items)!;
 		}
 		/// <summary>
+		/// Purges the contents within the collection.
+		/// </summary>
+		public void Clear()
+		{
+			Items = [];
+		}
+		/// <summary>
 		/// Determines if the given <paramref name="item"/> exists within this collection.
 		/// </summary>
 		/// <param name="item">The item to search for.</param>
 		/// <returns>a <see cref="bool"/> representation where <see cref="bool">true</see> results in success, otherwise the <paramref name="item"/> was not found within the collection.</returns>
 		public bool Contains(T item) => Items.Contains(item);
+		/// <summary>
+		/// Determines if the given <paramref name="index"/> references an acceptable index position for this collection.
+		/// </summary>
+		/// <param name="index">The index position to validate.</param>
+		/// <returns>a <see cref="bool"/> representation where <see cref="bool">true</see> results in success, otherwise <see cref="bool">false</see>.</returns>
+		protected bool IsIndexValid(int index) => index > -1 && index < Length;
 		/// <summary>
 		/// Removes the <paramref name="item"/> from the collection.
 		/// </summary>
@@ -78,19 +91,6 @@ namespace VGameEssentials.Systems.Collections.Basic
 		{
 			Items=Items.Remove(item)!;
 		}
-		/// <summary>
-		/// Purges the contents within the collection.
-		/// </summary>
-		public void Clear()
-		{
-			Items = [];
-		}
-		/// <summary>
-		/// Determines if the given <paramref name="index"/> references an acceptable index position for this collection.
-		/// </summary>
-		/// <param name="index">The index position to validate.</param>
-		/// <returns>a <see cref="bool"/> representation where <see cref="bool">true</see> results in success, otherwise <see cref="bool">false</see>.</returns>
-		protected bool IsIndexValid(int index) => index > -1 && index < Length;
 
 
 	}
