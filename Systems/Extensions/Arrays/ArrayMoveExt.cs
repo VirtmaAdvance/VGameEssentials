@@ -9,7 +9,11 @@ namespace VGameEssentials.Systems.Extensions.Arrays
 	public static class ArrayMoveExt
 	{
 
-
+		public static void Move<T>(this T?[]? source, int fromIndex, int toIndex)
+		{
+			if (source is null)
+				source = [];
+		}
 
 	}
 }
