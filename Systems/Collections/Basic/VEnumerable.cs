@@ -5,9 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VGameEssentials.Systems.Extensions.Arrays;
+using VGameEssentials.Systems.Extensions.Numbers.Ints;
 
 namespace VGameEssentials.Systems.Collections.Basic
 {
+	/// <summary>
+	/// A base class used to create custom collections with event listeners when the collection is modified.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	public class VEnumerable<T> : IEnumerable, IEnumerable<T>
 	{
 
@@ -39,7 +44,7 @@ namespace VGameEssentials.Systems.Collections.Basic
 			get => IsIndexValid(index) ? Items[index] : default;
 			set
 			{
-
+				Items = (IsIndexValid(index) || index.GetClosestValue(0, Length - 1) == 0 ? Items.Insert(value, index) : Items.Add(value))!;
 			}
 		}
 
@@ -92,5 +97,11 @@ namespace VGameEssentials.Systems.Collections.Basic
 			Items=Items.Remove(item)!;
 		}
 
+		IEnumerator IEnumerable.GetEnumerator() => Items.GetEnumerator();
+		/// <summary>
+		/// Gets the enumerator for this object.
+		/// </summary>
+		/// <returns></returns>
+		public IEnumerator<T> GetEnumerator() => ((IEnumerable<T>)Items!).GetEnumerator();
 	}
 }
