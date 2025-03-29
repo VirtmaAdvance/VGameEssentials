@@ -113,6 +113,18 @@ namespace VGameEssentials.Systems.Collections.Basic
 		/// <returns>a <see cref="bool"/> representation where <see cref="bool">true</see> results in success, otherwise the <paramref name="item"/> was not found within the collection.</returns>
 		public bool Contains(T item) => Items.Contains(item);
 		/// <summary>
+		/// Gets the index position of the first matching item in the collection.
+		/// </summary>
+		/// <param name="item">The item to look for.</param>
+		/// <returns>the index position representing the location within the collection the <paramref name="item"/> is at.</returns>
+		public int IndexOf(T? item)
+		{
+			for (int i = 0; i < Length; i++)
+				if (Items[i].IsEqualTo(item))
+					return i;
+			return -1;
+		}
+		/// <summary>
 		/// Determines if the given <paramref name="index"/> references an acceptable index position for this collection.
 		/// </summary>
 		/// <param name="index">The index position to validate.</param>
@@ -151,18 +163,6 @@ namespace VGameEssentials.Systems.Collections.Basic
 				if (Removed is not null)
 					Removed.Invoke(this, new(CollectionModificationType.Removed, originalValue, null, index));
 			}
-		}
-		/// <summary>
-		/// Gets the index position of the first matching item in the collection.
-		/// </summary>
-		/// <param name="item">The item to look for.</param>
-		/// <returns>the index position representing the location within the collection the <paramref name="item"/> is at.</returns>
-		public int IndexOf(T? item)
-		{
-			for (int i = 0; i < Length; i++)
-				if (Items[i].IsEqualTo(item))
-					return i;
-			return -1;
 		}
 		/// <summary>
 		/// Sorts the collection based on its values.
