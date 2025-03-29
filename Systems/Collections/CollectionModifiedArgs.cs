@@ -8,9 +8,10 @@
 	/// </remarks>
 	/// <param name="actionType">The modification action performed on the collection.</param>
 	/// <param name="value">The value that was affected.</param>
+    /// <param name="newValue">The new value.</param>
 	/// <param name="index">The index position that was affected.</param>
 	/// <param name="length">The last index in the collection that was or would be affected (Only applicable for insertion, moving, and shifting actions).</param>
-	public class CollectionModifiedArgs(CollectionModificationType actionType, object? value, int? index = null, int? length = null) : EventArgs
+	public class CollectionModifiedArgs(CollectionModificationType actionType, object? value = null, object? newValue = null, int? index = null, int? length = null) : EventArgs
     {
         /// <summary>
         /// The action performed on the collection.
@@ -28,5 +29,9 @@
         /// The value being inserted, added, removed, moved, or shifted.
         /// </summary>
         public readonly object? Value = value;
+        /// <summary>
+        /// The value that was used to replace the original value.
+        /// </summary>
+        public readonly object? NewValue = newValue;
 	}
 }

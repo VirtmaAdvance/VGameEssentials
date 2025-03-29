@@ -42,6 +42,10 @@
 		/// An item or items were shifted within the collection.
 		/// </summary>
 		Shifted,
+		/// <summary>
+		/// An item already existing within the collection was modified.
+		/// </summary>
+		Modified,
 
 	}
 }

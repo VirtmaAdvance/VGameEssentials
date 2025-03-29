@@ -19,6 +19,20 @@
 				return false;
 			return source!.Equals(value);
 		}
+		/// <summary>
+		/// Determines if the source object is equal to the given <paramref name="value"/> (Null-safe comparison).
+		/// </summary>
+		/// <param name="source">The source object to use.</param>
+		/// <param name="value">The object to compare to.</param>
+		/// <returns>a <see cref="bool"/> representation where <see cref="bool">true</see> results in success, otherwise <see cref="bool">false</see>.</returns>
+		public static bool IsEqualTo<T>(this T? source, T? value)
+		{
+			if (source is null && value is null)
+				return true;
+			if ((source is not null && value is null) || (source is null && value is not null))
+				return false;
+			return source!.Equals(value);
+		}
 
 	}
 }
